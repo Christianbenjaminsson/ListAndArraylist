@@ -8,6 +8,7 @@ public class ListAndArraylist {
     private static int[] baseData = new int[10];
 
     public static void main(String[] args) {
+
         System.out.println("Enter 10 integers: ");
         getInput();
         printArray(baseData);
@@ -39,5 +40,4 @@ public class ListAndArraylist {
         for(int i = 0; i < original.length; i ++)
             baseData[i] = original[i];
     }
-
 }
