@@ -14,7 +14,7 @@ public class ListAndArraylist {
         int choise = 0;
         printInstructions();
         while(!quit) {
-            System.out.println("Enter your choise: ");
+            System.out.print("\nEnter your choise: ");
             choise = scan.nextInt();
             scan.nextLine();
 
@@ -43,7 +43,6 @@ public class ListAndArraylist {
             }
         }
 
-
 //        System.out.println("Enter 10 integers: ");
 //        getInput();
 //        printArray(baseData);
@@ -52,6 +51,48 @@ public class ListAndArraylist {
 //        getInput();
 //        printArray(baseData);
 
+    }
+
+    public static void printInstructions() {
+        System.out.println("\nPress ");
+        System.out.println("\t0 - To print choise options.");
+        System.out.println("\t1 - To print the list of grocery items.");
+        System.out.println("\t2 - To add an item to the list.");
+        System.out.println("\t3 - To modify an item int the list.");
+        System.out.println("\t4 - To remove an item from the list.");
+        System.out.println("\t5 - To search for an item in the list.");
+        System.out.println("\t6 - To quit the application.");
+    }
+
+    public static void addItem() {
+        System.out.println("Please enter the grocery item: ");
+        groceryList.addGroceryItem(scan.nextLine());
+    }
+
+    public static void modifyItem() {
+        System.out.println("Enter item number: ");
+        int itemNo = scan.nextInt();
+        scan.nextLine();
+        System.out.println("Enter replacement item: ");
+        String newItem = scan.nextLine();
+        groceryList.modifyGroceryItem(itemNo-1, newItem);
+    }
+
+    public static void removeItem() {
+        System.out.println("Enter item number: ");
+        int itemNo = scan.nextInt();
+        scan.nextLine();
+        groceryList.removeGroceryItem(itemNo-1);
+    }
+
+    public static void searchForItem() {
+        System.out.println("Item to search for: ");
+        String searchItem = scan.nextLine();
+        if (groceryList.findItem(searchItem) != null) {
+            System.out.println("Found " + searchItem + " in our grocery list");
+        } else {
+            System.out.println(searchItem + " is not in the shopping list");
+        }
     }
 
 //    private static void getInput()
